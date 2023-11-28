@@ -1,7 +1,7 @@
 package com.example.historyservice.controller;
 
 
-import com.example.historyservice.entity.History;
+import com.example.historyservice.dto.HistoryDTO;
 import com.example.historyservice.service.impl.HistoryServiceImpl;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ public class HistoryController {
     private final HistoryServiceImpl historyService;
 
     @GetMapping("/collect/{ticketId}")
-    public ResponseEntity<List<History>> getHistoryByIdTicket(@PathVariable Long ticketId) throws EntityNotFoundException {
+    public ResponseEntity<List<HistoryDTO>> getHistoryByIdTicket(@PathVariable Long ticketId) throws EntityNotFoundException {
         return ResponseEntity.ok(historyService.getAllHistory(ticketId));
     }
 }
