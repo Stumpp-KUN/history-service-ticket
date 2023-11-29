@@ -32,7 +32,7 @@ public class HistoryServiceImpl implements HistoryService {
 
     @Transactional
     @Override
-    public HistoryDTO createNewHistory(HistorySaveEvent historySaveEvent) {
+    public void createNewHistory(HistorySaveEvent historySaveEvent) {
         log.info("Creating new history log");
 
         History history=historyMapper.mapToHistory(historySaveEvent);
@@ -40,7 +40,7 @@ public class HistoryServiceImpl implements HistoryService {
         history.setAction(Action.valueOf(historySaveEvent.getAction().name()));
         history.setDate(LocalDate.now());
 
-        return historyMapper.mapFromEntity(historyRepository.save(history));
+        historyRepository.save(history);
     }
 
     @Override

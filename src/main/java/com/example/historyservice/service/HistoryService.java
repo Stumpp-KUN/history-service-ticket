@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface HistoryService {
     List<HistoryDTO> getAllHistory(Long ticketId) throws EntityNotFoundException;
-    HistoryDTO createNewHistory(HistorySaveEvent historySaveEvent);
+    void createNewHistory(HistorySaveEvent historySaveEvent);
 }
