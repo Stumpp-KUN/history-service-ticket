@@ -1,0 +1,12 @@
+com\example\historyservice\repository\HistoryRepository.class
+com\example\historyservice\controller\HistoryController.class
+com\example\historyservice\event\HistorySaveEvent$HistorySaveEventBuilder.class
+com\example\historyservice\service\HistoryService.class
+com\example\historyservice\HistoryServiceApplication.class
+com\example\historyservice\entity\History$HistoryBuilder.class
+com\example\historyservice\event\HistorySaveEvent.class
+com\example\historyservice\mapper\HistoryMapper.class
+com\example\historyservice\mapper\HistoryMapperImpl.class
+com\example\historyservice\enums\Action.class
+com\example\historyservice\service\impl\HistoryServiceImpl.class
+com\example\historyservice\entity\History.class
