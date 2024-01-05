@@ -1,8 +1,8 @@
 package com.example.historyservice.controller;
 
 
-import com.example.historyservice.entity.History;
-import com.example.historyservice.service.impl.HistoryServiceImpl;
+import com.example.historyservice.dto.HistoryDTO;
+import com.example.historyservice.service.HistoryService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,10 +18,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HistoryController {
 
-    private final HistoryServiceImpl historyService;
+    private final HistoryService historyService;
 
     @GetMapping("/collect/{ticketId}")
-    public ResponseEntity<List<History>> getHistoryByIdTicket(@PathVariable Long ticketId) throws EntityNotFoundException {
+    public ResponseEntity<List<HistoryDTO>> getHistoryByIdTicket(@PathVariable Long ticketId) throws EntityNotFoundException {
         return ResponseEntity.ok(historyService.getAllHistory(ticketId));
     }
 }
